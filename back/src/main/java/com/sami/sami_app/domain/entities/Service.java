@@ -33,11 +33,11 @@ public class Service{
     private Text anamnesis;
 
     @ManyToOne
-    @JoinColumn(name = "fk_id_hospital" referencedColumnName = "id_hospital")
+    @JoinColumn(name = "fk_id_hospital", referencedColumnName = "id_hospital")
     private Hospital hospital;
 
     @OneToOne
-    @JoinColumn(name = "fk_id_ambulance" referencedColumnName = "id_ambulance")
+    @JoinColumn(name = "fk_id_ambulance",referencedColumnName = "id_ambulance")
     private Ambulance ambulance;
 
     @OneToOne
