@@ -1,5 +1,7 @@
 package com.sami.sami_app.domain.entities;
 
+import com.sami.sami_app.util.enums.StatusService;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,7 +20,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Service {
+public class Service{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_service")
@@ -26,7 +28,7 @@ public class Service {
 
     private double latidudeLocation;
     private double longitudeLocation;
-    private Enum statusService;
+    private StatusService statusService;
     @SuppressWarnings("rawtypes")
     private Text anamnesis;
 
