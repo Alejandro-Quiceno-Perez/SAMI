@@ -1,6 +1,6 @@
 package com.sami.sami_app.domain.entities;
 
-import java.sql.Driver;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 
 /*-
 *-----------------------------------------------------------------------------------------------------------------------
@@ -34,13 +35,11 @@ public class Ambulance {
     @Column(name="ambulance_type",length = 20, nullable = false)
     private String ambulanceType;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(name = "fk_id_driver", referencedColumnName = "id_driver")
     private Driver driver;
 
-    @ManyToOne
-    @JoinColumn(name = "fk_id_aph", referencedColumnName = "id_aph")
-    private Aph aph;
+   
 
 
     
