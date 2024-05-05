@@ -8,8 +8,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /*-
 *-----------------------------------------------------------------------------------------------------------------------
@@ -20,27 +22,27 @@ import jakarta.persistence.OneToOne;
 *------------------------------------------------------------------------------------------------------------------------
 */
 
-@Entity(name="ambulance")
-
+@Entity(name = "Ambulance")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Ambulance {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_ambulance")
-    private long idAmbulance;
+    private Long idAmbulance;
 
-    @Column(name="vehicle_plate",length = 6, nullable = false)
+    @Column(name="vehicle_plate", nullable = false, length = 10)
     private String vehiclePlate;
 
-    @Column(name="ambulance_type",length = 20, nullable = false)
+    @Column(name="ambulance_type", nullable = false, length = 50)
     private String ambulanceType;
 
     @OneToOne
-    @JoinColumn(name = "fk_id_driver", referencedColumnName = "id_driver")
+    @JoinColumn(name = "driver_id", referencedColumnName = "id_driver")
     private Driver driver;
 
-   
-
-
-    
+    @OneToOne
+    @JoinColumn(name = "emt_id", referencedColumnName = "id_emt")
+    private Emt emt; 
 }

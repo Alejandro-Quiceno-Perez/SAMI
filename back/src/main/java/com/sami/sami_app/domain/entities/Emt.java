@@ -16,14 +16,12 @@ import jakarta.persistence.OneToOne;
 
 @Entity(name="emt")
 public class Emt {
-
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_emt")
-    private long idEmt;
+    private Long idEmt;
 
     @OneToOne
-    @JoinColumn(name = "fk_id_emt", referencedColumnName = "id_emt")
+    @JoinColumn(name = "user_id", referencedColumnName = "id_user")
     private User user;
-    
 }
