@@ -1,7 +1,7 @@
 package com.sami.sami_app.domain.entities;
 
 import com.sami.sami_app.util.enums.StatusService;
-
+import com.sami.sami_app.domain.entities.*;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
@@ -18,6 +19,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
+/*
+    This entity is used to create the service, it has ID, location latitude, location length, 
+    the state of the service, a text type description.
+    It also has many-to-one references with Hospital, one-to-one with Ambulance, 
+    one-to-one with client.... Which allows a relationship between the Service entity and the 
+    other entities.
+ */
 @Entity(name = "service")
 @Data
 @AllArgsConstructor
@@ -36,8 +45,8 @@ public class Service{
     @Column(nullable = false)
     private StatusService statusService;
 
-
-    private Text anamnesis;
+    @Lob
+    private String anamnesis;
 
     @ManyToOne
     @JoinColumn(referencedColumnName = "id_hospital")
