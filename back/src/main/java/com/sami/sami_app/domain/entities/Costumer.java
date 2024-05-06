@@ -10,19 +10,22 @@ import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-@Entity(name = "client")
+/*-
+*---------------------------------------------------------------------------------------------------------------------------
+*The "COSTOMER" entity is created in order to manage the user's role with other entities. 
+The costumer class defines the attributes of a costumer, such as its unique identifier.-------------------------------------------------
+*/
+@Entity(name = "costumer")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Client {
+public class Costumer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-     @Column(name = "id_client")
-    private Long idClient;
+    private Long idCustomer;
 
     @OneToOne
-    @JoinColumn(name = "fk_id_user", referencedColumnName = "id_user")
+    @JoinColumn(name = "user_id", referencedColumnName = "id_user")
     private User user;
-
 }
+
