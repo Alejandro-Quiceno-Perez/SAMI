@@ -21,26 +21,31 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Hospital {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_hospital")
     private Long idHospital;
-    @Column(length = 255, nullable = false)
+
+    @Column(nullable = false, length = 100)
     private String name;
-    @Column(length = 255, nullable = false)
+
+    @Column(nullable = false)
+    private Double latitudeLocation;
+
+    @Column(nullable = false)
+    private Double longitudeLocation;
+
+    @Column(nullable = false, length = 200)
     private String address;
-    @Column(name = "latitude_location", precision = 10, scale = 6, nullable = false)
-    private double latitudeLocation;
-    @Column(name = "longitude_location", precision = 10, scale = 6, nullable = false)
-    private double longitudeLocation;
-    @Column(name = "complexity_grade", length = 50, nullable = false)
+
+    @Column(nullable = false, length = 50)
     private String complexityGrade;
-    @Column(length = 255, nullable = false)
+
+    @Column(nullable = false, length = 100)
     private String specialty;
 
-    @OneToMany(mappedBy = "hospital", fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = false)
+    @OneToMany(mappedBy = "hospital", fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = false)
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
     private List<Service> services;
+
 }
