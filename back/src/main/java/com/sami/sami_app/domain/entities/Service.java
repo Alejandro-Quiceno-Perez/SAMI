@@ -40,14 +40,14 @@ public class Service{
     private Text anamnesis;
 
     @ManyToOne
-    @JoinColumn(name = "hospital_id", referencedColumnName = "id_hospital")
+    @JoinColumn(referencedColumnName = "id_hospital")
     private Hospital hospital;
 
     @OneToOne
-    @JoinColumn(name = "ambulance_id",referencedColumnName = "id_ambulance")
+    @JoinColumn(referencedColumnName = "id_ambulance")
     private Ambulance ambulance;
 
     @OneToOne
-    @JoinColumn(name = "customer_id", referencedColumnName = "id_customer")
+    @JoinColumn(referencedColumnName = "id_customer")
     private Customer customer;
 }
