@@ -4,6 +4,8 @@ import com.sami.sami_app.util.enums.StatusService;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -27,20 +29,25 @@ public class Service{
     private Long idService;
 
     private double latidudeLocation;
+
     private double longitudeLocation;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private StatusService statusService;
-    @SuppressWarnings("rawtypes")
+
+
     private Text anamnesis;
 
     @ManyToOne
-    @JoinColumn(name = "fk_id_hospital", referencedColumnName = "id_hospital")
+    @JoinColumn(name = "hospital_id", referencedColumnName = "id_hospital")
     private Hospital hospital;
 
     @OneToOne
-    @JoinColumn(name = "fk_id_ambulance",referencedColumnName = "id_ambulance")
+    @JoinColumn(name = "ambulance_id",referencedColumnName = "id_ambulance")
     private Ambulance ambulance;
 
     @OneToOne
-    @JoinColumn(name = "fk_id_client", referencedColumnName = "id_client")
-    private Client client;
+    @JoinColumn(name = "customer_id", referencedColumnName = "id_customer")
+    private Customer customer;
 }
