@@ -16,6 +16,15 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+/*-
+*-----------------------------------------------------------------------------------------------------------------------
+ The Hospital class defines the attributes of a hospital, such as its unique identifier, 
+ name, degree of complexity, address, specialty and location. These attributes are assigned 
+ to the corresponding columns in the database using the Column decorator, with specific 
+ sizes and specifications depending on the requirements.
+*------------------------------------------------------------------------------------------------------------------------
+*/
+
 @Entity(name = "hospital")
 @Data
 @AllArgsConstructor
