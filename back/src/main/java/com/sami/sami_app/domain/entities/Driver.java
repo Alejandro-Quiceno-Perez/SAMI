@@ -18,7 +18,6 @@ import jakarta.persistence.OneToOne;
 public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_driver")
     private Long idDriver;
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id_user")

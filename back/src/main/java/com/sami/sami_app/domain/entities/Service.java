@@ -28,6 +28,7 @@ public class Service{
 
     private double latidudeLocation;
     private double longitudeLocation;
+    
     private StatusService statusService;
     @SuppressWarnings("rawtypes")
     private Text anamnesis;

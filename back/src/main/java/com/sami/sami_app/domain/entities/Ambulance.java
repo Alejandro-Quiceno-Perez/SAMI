@@ -29,14 +29,18 @@ import lombok.NoArgsConstructor;
 public class Ambulance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_ambulance")
     private Long idAmbulance;
 
-    @Column(name="vehicle_plate", nullable = false, length = 10)
+    @Column(nullable = false, length = 10)
     private String vehiclePlate;
 
-    @Column(name="ambulance_type", nullable = false, length = 50)
+    @Column(nullable = false, length = 50)
     private String ambulanceType;
+    @Column(nullable = false)
+    private Double latitudeAmbulance;
+
+    @Column(nullable = false)
+    private Double longitudeAmbulance;
 
     @OneToOne
     @JoinColumn(name = "driver_id", referencedColumnName = "id_driver")
