@@ -18,7 +18,6 @@ import jakarta.persistence.OneToOne;
 public class Emt {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id_emt")
     private Long idEmt;
 
     @OneToOne

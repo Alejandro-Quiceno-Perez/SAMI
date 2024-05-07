@@ -12,7 +12,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 /*-
 *---------------------------------------------------------------------------------------------------------------------------
-*The "COSTOMER" entity is created in order to manage the user's role with other entities. 
+*The "COSTUMER" entity is created in order to manage the user's role with other entities. 
 The costumer class defines the attributes of a costumer, such as its unique identifier.-------------------------------------------------
 */
 @Entity(name = "costumer")
