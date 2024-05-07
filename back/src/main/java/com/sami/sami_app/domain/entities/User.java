@@ -1,7 +1,5 @@
 package com.sami.sami_app.domain.entities;
 
-import org.springframework.boot.autoconfigure.integration.IntegrationProperties.RSocket.Client;
-
 import com.sami.sami_app.util.enums.RhType;
 import com.sami.sami_app.util.enums.UserType;
 
@@ -19,6 +17,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/*-
+*---------------------------------------------------------------------------------------------------------------------------
+The "user" class defines the attributes related to the user, the unique identifier, the type of user and the user's personal information such as name, surname, blood type.
+*---------------------------------------------------------------------------------------------------------------------------
+*/
 @Entity(name = "user")
 @Data
 @AllArgsConstructor
@@ -26,34 +29,34 @@ import lombok.NoArgsConstructor;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_user")
     private Long idUser;
 
-    @Column(length = 50, nullable = false)
+    @Column(nullable = false, length = 50)
     private String email;
 
-    @Column(length = 20, nullable = false)
+    @Column(nullable = false, length = 20)
     private String password;
 
-    @Column(name = "user_type")
-    @Enumerated(EnumType.STRING)
-    private UserType userType;
-
-    @Column(name = "first_name", length = 30, nullable = false)
+    @Column(length = 30 , nullable = false )
     private String firstName;
 
-    @Column(name = "last_name", length = 30, nullable = false)
+    @Column(length = 30, nullable = false)
     private String lastName;
+
+   @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private UserType userType;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private RhType rhType;
 
     @Column(length = 15, nullable = false)
     private String phone;
 
-    @Column(name = "rh_type")
-    @Enumerated(EnumType.STRING)
-    private RhType rhType;
 
     @OneToOne(mappedBy = "user",fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = false)
-    private Client client;
+    private Costumer customer;
     @OneToOne(mappedBy = "user",fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = false)
     private Emt emt;
     @OneToOne(mappedBy = "user",fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = false)
