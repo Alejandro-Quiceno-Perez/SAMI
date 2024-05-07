@@ -1,6 +1,4 @@
 package com.sami.sami_app.domain.entities;
-
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -12,14 +10,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 /*-
 *---------------------------------------------------------------------------------------------------------------------------
-*The "COSTUMER" entity is created in order to manage the user's role with other entities. 
-The costumer class defines the attributes of a costumer, such as its unique identifier.-------------------------------------------------
+*The "CUSTOMER" entity is created in order to manage the user's role with other entities. 
+The customer class defines the attributes of a costumer, such as its unique identifier.-------------------------------------------------
 */
-@Entity(name = "costumer")
+@Entity(name = "customer")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Costumer {
+public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idCustomer;
