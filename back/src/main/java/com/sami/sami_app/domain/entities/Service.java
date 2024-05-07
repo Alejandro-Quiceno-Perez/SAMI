@@ -41,6 +41,7 @@ public class Service{
 
     private double longitudeLocation;
 
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private StatusService statusService;
