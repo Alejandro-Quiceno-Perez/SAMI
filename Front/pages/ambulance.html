@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAMI - Ambulance</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" href="../img/logo-mini.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body class="container-fluid">
+    <header
+        class="container-fluid bg-dang  container-xxl container-xl container-lg container-md container-sm  container bg-warnin p-2">
+        <nav class="d-flex justify-content-between align-items-center" id="nav-container">
+
+        </nav>
+    </header>
+
+    <div
+        class="container-fluid ontainer-xxl container-xl container-lg container-md container-sm  container bg-warnin d-flex justify-content-between pt-4">
+        <div class="container-ambulance">
+
+            <div class="card m-3">
+                <h5 class="card-header">Ubication service</h5>
+                <div class="card-body">
+                    <h5 class="card-text"><a href="https://www.google.com/maps/place/Cl.+35+Sur,+Zona+9,+Envigado,+Antioquia/@6.1724705,-75.5862527,17z/data=!4m6!3m5!1s0x8e468251ff7dfb4f:0x639c0f60d395720a!8m2!3d6.1715162!4d-75.5856823!16s%2Fg%2F11j7lx_f00?entry=ttu" class="nav-link text-primary">Link your service</a></h5>
+                    <div class="form-floating mt-3">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="emerg-description"
+                            style="height: 200px"></textarea>
+                        <label for="emerg-description">Description of the Emergency</label>
+                    </div>
+
+                    <div class="modal-footer mt-3">
+                        <button class="btn btn-success mx-3 accept">Save description</button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Lado derecho -->
+
+        <div class="container-rigth ">
+            <div class="container-service">
+                <h2 class="text-center fw-bold text-dark">Inbound services</h2>
+                <div class="container-cards d-flex flex-wrap justify-content-center" id="conCards"></div>
+            </div>
+            <div class="card m-3">
+                <h5 class="card-header">New service</h5>
+                <div class="card-body">
+                    <h5 class="card-text">${i.name}</h5>
+                    <p class="card-text">Email: ${i.email}</p>
+                    <p class="card-text">Tel: ${i.phone}</p>
+                    <p class="card-text">Address: ${i.address}</p>
+                    <p class="card-text">Patients: ${i.patients}</p>
+                    <p class="card-text">Emergency Grade: ${i.emergencyGrade}</p>
+                    <p class="card-text">Emergency Description: <br>${i.emergencyDescription}</br></p>
+                </div>
+            </div>
+            <button class="btn btn-outline-secondary ms-3">Download PDF</button>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+        
+    <script src="../js/nav.js"></script>
+</body>
+
+</html>

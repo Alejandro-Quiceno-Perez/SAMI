@@ -1,0 +1,50 @@
+
+
+
+
+/* Contenedor principal */
+
+
+.request-container,
+.service-container,
+.map-container,
+.menu-section {
+  transition: opacity 1s ease-in-out, display 1s ease-in-out; /* Modificado */
+}
+
+.request-container,
+.service-container {
+  opacity: 1;
+  display: block;
+}
+
+/* Personal Data Form */
+
+
+.request-container {
+  height: 80vh;
+}
+
+.container-form {
+  border-radius: 20px;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.418);
+}
+
+.map-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 60%;
+  height: 100vh;
+  opacity: 1;
+  display: none;
+}
+
+.service-container {
+  background: rgb(236, 236, 236);
+  width: 30%;
+  height: 100vh;
+  display: none;
+  padding: 10px;
+}

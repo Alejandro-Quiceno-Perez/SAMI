@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+
+.img-logo-header {
+  width: 8rem;
+}
+
+.container-information {
+  margin-top: 20px;
+  height: 80vh;
+}
+
+.container-imformation-sami {
+  width: 40%;
+}
+
+.title {
+  letter-spacing: 10px;
+  text-shadow: -2px 2px 5px rgba(0, 0, 0, 0.607);
+}
+
+/* FIN SLIDE DE EMERGENCIA */
+.container-img {
+  position: relative;
+}
+
+
+.img-container {
+  border-radius: 15px 110px;
+}
+/* BOTTON */
+
+.button-request-service {
+  position: relative;
+  width: 100%;
+  top: 20px;
+  font-size: 17px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  padding: 1em 5em;
+  display: inline-block;
+  border-radius: 20px;
+  transition: all 0.2s;
+  border: none;
+  font-family: inherit;
+  font-weight: 900;
+  color: white;
+  background-color: rgb(255, 0, 0);
+}
+
+.button-request-service:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(255, 3, 3, 0.623);
+}
+
+.button-request-service:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(212, 10, 10, 0.445);
+}
+
+.button-request-service::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.button-request-service::after {
+  background-color: #ff0000;
+}
+
+.button-request-service:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.img-logo {
+  width: 100%;
+  border-radius: 30px 100px;
+}
+
+
+.info-logo {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.589);
+  top: 50%;
+  width: 100%;
+}
+
+.container-about-us {
+  height: 80vh;
+}
+
+.container-admin {
+  height: 80vh;
+  width: 65%;
+  border-right: 2px solid gray;
+}
+
+.container-rigth  {
+  width: 30%;
+}
+
+.container-ambulance {
+  height: 80vh;
+  width: 65%;
+  border-right: 2px solid gray;
+}
+

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SAMI - ADMIN</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="shortcut icon" href="../img/logo-mini.png" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body class="container-fluid">
+    <header
+        class="container-fluid bg-dang  container-xxl container-xl container-lg container-md container-sm  container bg-warnin p-2">
+        <nav class="d-flex justify-content-between align-items-center" id="nav-container">
+
+        </nav>
+    </header>
+
+    <div
+        class="container-fluid ontainer-xxl container-xl container-lg container-md container-sm  container bg-warnin d-flex justify-content-between pt-4">
+        <div class="container-admin">
+            <ul class="nav nav-pills d-flex justify-content-start gap-3 mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                        aria-selected="true">Active service</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+                        aria-selected="false">Ambulance Location</button>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill"
+                        data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled"
+                        aria-selected="false">Service history</button>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
+                    tabindex="0">
+                    <div class="card mt-3 me-4 ">
+                        <h5 class="card-header">Active service</h5>
+                        <div class="card-body ">
+                            <div class="row">
+                                <div class="col-8">
+                                    <h5 class="card-title">${i.name}</h5>
+                                    <p class="card-text">Emergency Grade: ${i.emergencyGrade}</p>
+                                    <p>Patients: ${i.patients}</p>
+                                    <p>Emergency Description: ${i.emergencyDescription}</p>
+                                </div>
+                                <div class="col-4">
+                                    <!-- <label for="" class="mb-2">Type of Ambulance</label> -->
+                                    <select class="form-select" aria-label="Default select example" required>
+                                        <option selected disabled>Assign ambulance</option>
+                                        <option value="1">Assistance ambulance</option>
+                                        <option value="2">Medicalized ambulance</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="modal-footer d-grid gap-2">
+                                <button class="btn btn-success start" type="submit" id=${i.id}>Start service</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                    tabindex="0">
+                    <div class="card mt-3 me-4">
+                        <h5 class="card-header">Started service</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">${i.name}</h5>
+                            <p class="card-text">Email: ${i.email}
+                                <br>Phone: ${i.phone}</br>
+                            </p>
+                            <div class="modal-footer">
+                                <button class="btn btn-danger eliminar" id=${i.id}>Cancel service</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade me-4" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab"
+                    tabindex="0">
+                    <table class="table table-striped ">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">State</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">${i.id}</th>
+                                <td>${i.name}</td>
+                                <td>${i.state}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lado derecho -->
+
+        <div class="container-rigth ">
+            <div class="container-service">
+                <h2 class="text-center fw-bold text-dark">Inbound services</h2>
+                <div class="container-cards d-flex flex-wrap justify-content-center" id="conCards"></div>
+            </div>
+            <div class="card m-3">
+                <h5 class="card-header">New service</h5>
+                <div class="card-body">
+                    <h5 class="card-text">${i.name}</h5>
+                    <p class="card-text">Email: ${i.email}</p>
+                    <p class="card-text">Tel: ${i.phone}</p>
+                    <p class="card-text">Address: ${i.address}</p>
+                    <p class="card-text">Patients: ${i.patients}</p>
+                    <p class="card-text">Emergency Grade: ${i.emergencyGrade}</p>
+                    <p class="card-text">Emergency Description: <br>${i.emergencyDescription}</br></p>
+                    <div class="modal-footer">
+                        <button class="btn btn-outline-danger eliminar" id=${i.id}>Cancel</button>
+                        <button class="btn btn-success mx-3 accept" id=${i.id}>Accept</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/admin.js"></script>
+</body>
+
+</html>
